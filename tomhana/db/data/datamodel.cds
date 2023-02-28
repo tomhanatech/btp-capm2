@@ -12,7 +12,7 @@ entity bedqty
     type : String(50)
         @title : 'Type';
     beds : Decimal(15,2)
-        @title : 'Bed';
+        @title : 'Bed Count';
     population : Integer
         @title : 'Population';
 }
