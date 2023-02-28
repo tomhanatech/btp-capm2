@@ -8,7 +8,7 @@ entity bedqty
     state : String(10)
         @title : 'State';
     county : String(100)
-        @title : 'County';
+        @title : 'County name';
     type : String(50)
         @title : 'Type';
     beds : Decimal(15,2)
