@@ -1,0 +1,10 @@
+{
+  "cds": {
+    "requires": {
+      "OP_API_SALESORGANIZATION_SRV_0001": {
+        "kind": "odata-v2",
+        "model": "srv/external/OP_API_SALESORGANIZATION_SRV_0001"
+      }
+    }
+  }
+}

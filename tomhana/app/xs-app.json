@@ -1,0 +1,24 @@
+{
+    "welcomeFile": "https://c6d331datrial-dev-tomhana-srv.cfapps.us10-001.hana.ondemand.com/catalog/beddataset",
+    "authenticationMethod": "route",
+    "routes": [
+        { 
+            "source": "^/java", 
+            "target": "/", 
+            "destination": "javaapp", 
+            "authenticationType": "xsuaa"
+        },
+        { 
+            "source": "^/node", 
+            "target": "/", 
+            "destination": "nodeapp", 
+            "authenticationType": "xsuaa"
+        },
+        { 
+            "source": "^/ui/(.*)$", 
+            "target": "$1", 
+            "localDir": "resources", 
+            "authenticationType": "xsuaa"
+        }
+    ]
+}

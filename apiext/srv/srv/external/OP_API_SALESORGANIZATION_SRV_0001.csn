@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "creator": "cds-dk 6.3.1"
+  },
+  "$version": "2.0",
+  "definitions": {
+    "OP_API_SALESORGANIZATION_SRV_0001": {
+      "kind": "service",
+      "@cds.external": true,
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx"
+    },
+    "OP_API_SALESORGANIZATION_SRV_0001.A_SalesOrganization": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Sales Organization",
+      "elements": {
+        "SalesOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Sales Organization",
+          "notNull": true
+        },
+        "SalesOrganizationCurrency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Statistics Currency",
+          "@sap.quickinfo": "Statistics currency",
+          "@sap.semantics": "currency-code",
+          "notNull": false
+        },
+        "CompanyCode": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code",
+          "@sap.quickinfo": "Company code of the sales organization",
+          "notNull": false
+        },
+        "IntercompanyBillingCustomer": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Cust.Inter-Co.Bill.",
+          "@sap.quickinfo": "Customer number for intercompany billing",
+          "notNull": false
+        },
+        "to_Text": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "OP_API_SALESORGANIZATION_SRV_0001.A_SalesOrganizationText",
+          "cardinality": {
+            "max": "*"
+          },
+          "keys": []
+        }
+      }
+    },
+    "OP_API_SALESORGANIZATION_SRV_0001.A_SalesOrganizationText": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Sales Organization Text",
+      "elements": {
+        "SalesOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Sales Organization",
+          "notNull": true
+        },
+        "Language": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2,
+          "@sap.label": "Language Key",
+          "notNull": true
+        },
+        "SalesOrganizationName": {
+          "type": "cds.String",
+          "length": 20,
+          "@sap.label": "Sales Organization Description",
+          "notNull": false
+        },
+        "to_SalesOrganization": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "OP_API_SALESORGANIZATION_SRV_0001.A_SalesOrganization",
+          "keys": []
+        }
+      }
+    }
+  }
+}

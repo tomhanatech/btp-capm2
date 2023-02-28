@@ -1,0 +1,45 @@
+_schema-version: '3.1'
+ID: tomhana
+version: 1.0.0
+description: A simple CAP project.
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npx -p @sap/cds-dk cds build --production
+modules:
+  - name: tomhana-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      buildpack: nodejs_buildpack
+    build-parameters:
+      builder: npm-ci
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: '${default-url}'
+    requires:
+      - name: tomhana-db
+  - name: tomhana-db-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+    requires:
+      - name: tomhana-db
+resources:
+  - name: tomhana-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+  - name: tomhana-xsuaa
+    type: org.cloudfoundry.managed-service
+    description: securty
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path-: ./xs-security.js

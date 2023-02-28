@@ -24,5 +24,6 @@
             "name": "tomview1",
             "database": "${workspaceFolder:projects}/tombtp/tomvew.db"
         }
-    ]
+    ],
+    "SAP HANA Database Artifacts.lastSelectedTargetPath": "/home/user/projects/tomhana/gen/db/src"
 }
