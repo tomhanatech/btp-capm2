@@ -1,0 +1,26 @@
+
+
+http://localhost:4004/catalog-datamodel-new/datamodenew1set
+
+###
+GET http://localhost:4004/catalog-datamodel-new/datamodenew1set
+
+### post
+POST  http://localhost:4004/catalog-datamodel-new/datamodenew1set
+Content-Type: application/json
+
+{ 
+"name": "Peter",
+"age": 24,
+"salary": 500,
+"amount": 2000 } 
+
+###
+PATCH  http://localhost:4004/catalog-datamodel-new/datamodenew1set/89895541-07db-4985-a899-d33f1059bf0e
+Content-Type: application/json
+
+{
+    "salary" : 4000
+}
+
+###

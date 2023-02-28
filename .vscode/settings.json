@@ -1,0 +1,28 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "tom1",
+            "database": "${workspaceFolder:projects}/tombtp/db.sqlite"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "tom2",
+            "database": "${workspaceFolder:projects}/tombtp/hospitalinfo"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "datamodel1",
+            "database": "${workspaceFolder:projects}/tombtp/datamodel"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "tomview1",
+            "database": "${workspaceFolder:projects}/tombtp/tomvew.db"
+        }
+    ]
+}
